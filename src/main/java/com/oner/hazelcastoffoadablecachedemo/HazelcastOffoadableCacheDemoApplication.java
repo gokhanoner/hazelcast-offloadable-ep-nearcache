@@ -85,7 +85,7 @@ public class HazelcastOffoadableCacheDemoApplication {
 			this.hz = hz;
 		}
 
-		@Cacheable(value = TestConstants.TEST_MAP_CACHE, sync = true)
+		@Cacheable(value = TestConstants.TEST_MAP_CACHE)
 		public MyDataDao getData(Integer id) {
 			return (MyDataDao) hz.getMap(TestConstants.TEST_MAP).executeOnKey(id, new MyEP());
 		}
